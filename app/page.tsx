@@ -1,6 +1,7 @@
 import Button from "@/components/Button/Button";
 import Htag from "@/components/Htag/Htag";
 import P from '@/components/P/P';
+import Tag from "@/components/Tag/Tag";
 
 export default function Home() {
   return (
@@ -13,6 +14,11 @@ export default function Home() {
       <P size="l">Большой</P>
       <P size="m">Средний</P>
       <P size="s">Маленький</P>
+      <Tag size="s" color="red">Small red</Tag>
+      <Tag size="m" color="green">Medium green</Tag>
+      <Tag size="s" color="ghost" href="#">Small ghost</Tag>
+      <Tag size="s" color="primary">Medium primary</Tag>
+      <Tag color="grey">Medium grey</Tag>
     </>
   );
 }
