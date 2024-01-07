@@ -1,6 +1,10 @@
 import type { Metadata } from 'next'
 import { Noto_Sans } from 'next/font/google'
 import './globals.css';
+import styles from './page.module.css'
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import Sidebar from './components/Sidebar/Sidebar';
 
 const inter = Noto_Sans({ weight: ['300', '400', '500', '700'], subsets: ['latin', 'cyrillic'] });
 
@@ -16,7 +20,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className}, ${styles.wrapper}`}>
+        <Header className={styles.header}/>
+        <Sidebar className={styles.sidebar}/>
+        <main className={styles.main}>
+          {children}
+        </main>
+        <Footer className={styles.footer}/>
+      </body>
     </html>
   );
 }
